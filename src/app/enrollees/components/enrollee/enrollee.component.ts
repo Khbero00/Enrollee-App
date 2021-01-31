@@ -1,9 +1,13 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+
 import { ToastrService } from 'ngx-toastr';
+
 import { Subscription } from 'rxjs';
 import {concatMap, catchError } from 'rxjs/operators';
+
 import { Enrollee } from '../../models/enrollee';
+
 import { EnrolleeService } from '../../services/enrollee.service';
 
 @Component({

@@ -2,9 +2,11 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
-import { Enrollee } from '../../models/enrollee';
-import { EnrolleeService } from '../../services/enrollee.service';
 import { Router } from '@angular/router';
+
+import { Enrollee } from '../../models/enrollee';
+
+import { EnrolleeService } from '../../services/enrollee.service';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -37,9 +39,9 @@ export class EnrolleesComponent implements OnInit {
     });
   }
 
-  applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
+  applyFilter(filterValue: string) {
+    const filter = filterValue;
+    this.dataSource.filter = filter.trim().toLowerCase();
 
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
@@ -47,7 +49,6 @@ export class EnrolleesComponent implements OnInit {
   }
 
   onEditEnrollee(enrollee: Enrollee) {
-    console.log(enrollee);
     this._router.navigate([`${enrollee.id}`]);
   }
 

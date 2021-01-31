@@ -6,7 +6,7 @@
   <div class="enrollees-filter">
     <mat-form-field appearance="outline">
       <mat-label>Filter By Enrollee Id or Enrollee Name</mat-label>
-      <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Gab" #input>
+      <input class="enrollees-filter-input" matInput (keyup)="applyFilter($event.value)" placeholder="Ex. Gab" #input>
     </mat-form-field>
   </div> 
   
