@@ -8,6 +8,8 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { EnrolleesModule } from './enrollees/enrollees.module';
 import { HeaderModule } from './header/header.module';
+import { HttpClientModule } from '@angular/common/http';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -15,10 +17,13 @@ import { HeaderModule } from './header/header.module';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    
     BrowserAnimationsModule,
     HeaderModule,
     EnrolleesModule,
+    HttpClientModule,
+    ToastrModule.forRoot(),
+    AppRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],

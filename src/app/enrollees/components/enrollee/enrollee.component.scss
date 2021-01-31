@@ -1,0 +1,59 @@
+@import "../../../../sass/colors";
+
+.enrollee {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &-title {
+        text-align: center;
+        margin-bottom: 80px;
+
+        h1 { 
+            font-size: 50px;
+            color: $light-black;
+         }
+    }
+
+    &-card {
+        width: 30%;
+    }
+
+    &-card-content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &-form {
+        display: grid;
+    }
+
+    &-status {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        padding-right: 10px;
+    }
+
+    &-active {
+        font-size: 40px;
+
+        color: $light-green;
+    }
+
+    &-inactive {
+        font-size: 40px;
+
+        color: $red;
+    }
+
+    &-form-actions {
+        margin-top: 14px;
+
+        .mat-primary {
+            margin-right: 10px;
+        }
+    }
+}

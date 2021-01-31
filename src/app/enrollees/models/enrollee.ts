@@ -1,8 +1,8 @@
 export class Enrollee {
     constructor(
-        private id: string,
-        private active: boolean,
-        private name: string,
-        private dateOfBirth: Date
+        public id: string,
+        public active: boolean,
+        public name: string,
+        public dateOfBirth: Date
     ) {}
 }

@@ -1,1 +1,53 @@
-<p>enrollee works!</p>
+<div class="enrollee" *ngIf="enrollee">
+  <div class="enrollee-title">
+    <h1>{{enrollee.name}} Edit Form</h1>
+  </div>
+  <mat-card class="enrollee-card">
+    <mat-card-content class="enrollee-card-content">
+      <div class="enrollee-form">
+        <mat-form-field>
+          <mat-label>Enrollee ID</mat-label>
+          <input [(ngModel)]="enrollee.id" name="id" matInput disabled>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Date Of Birth</mat-label>
+          <input [(ngModel)]="enrollee.dateOfBirth" name="dob" matInput disabled>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Name</mat-label>
+          <input [(ngModel)]="enrollee.name" name="name" matInput>
+        </mat-form-field>
+        <div class="enrollee-status">
+          <div>
+            <mat-checkbox class="example-margin" [(ngModel)]="enrollee.active" name="status" color="primary">Is Active Enrollee?</mat-checkbox>
+          </div>
+          <div>
+            <div *ngIf="enrollee.active; else inactive">
+              <mat-icon class="enrollee-active" 
+            aria-hidden="false" 
+            aria-label="Active Enrollee" 
+            matTooltip="Active Enrollee"
+            matTooltipPosition="right">check</mat-icon>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="onSubmit()">Save</button>
+      <button mat-raised-button color="accent" (click)="goBack()">Go back</button>
+    </mat-card-actions>
+    
+    <ng-template #inactive>
+      <mat-icon 
+      class="enrollee-inactive" 
+      aria-hidden="false" 
+      aria-label="Inactive Enrollee" 
+      matTooltip="Inactive Enrollee"
+      matTooltipPosition="right">close</mat-icon>
+    </ng-template>
+  </mat-card>
+  
+</div>
