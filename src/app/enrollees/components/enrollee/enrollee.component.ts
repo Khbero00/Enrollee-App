@@ -53,7 +53,7 @@ export class EnrolleeComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    //this.routeSubscription.unsubscribe();
+    this.routeSubscription.unsubscribe();
   }
 
 
